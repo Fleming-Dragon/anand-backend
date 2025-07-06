@@ -12,9 +12,16 @@ const validateContact = [
     .withMessage("Please provide a valid email address"),
 
   body("phone")
-    .optional()
-    .matches(/^[\+]?[1-9][\d]{0,15}$/)
-    .withMessage("Please provide a valid phone number"),
+    .optional({ checkFalsy: true })
+    .custom((value) => {
+      if (!value) return true; // Allow empty values
+      // Remove all non-digit characters for validation
+      const cleaned = value.replace(/\D/g, "");
+      if (cleaned.length < 10 || cleaned.length > 15) {
+        throw new Error("Phone number must be between 10 and 15 digits");
+      }
+      return true;
+    }),
 
   body("subject")
     .trim()

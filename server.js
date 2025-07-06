@@ -68,7 +68,7 @@ app.use("*", (req, res) => {
   });
 });
 
-app.listen(PORT, '0.0.0.0', () => {
+app.listen(PORT, "0.0.0.0", () => {
   console.log(`🚀 Anand Agro Industry API server running on port ${PORT}`);
   console.log(`📱 Environment: ${config.NODE_ENV}`);
   console.log(`🌐 CORS enabled for: ${config.ALLOWED_ORIGINS.join(", ")}`);

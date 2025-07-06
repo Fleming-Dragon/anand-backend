@@ -126,6 +126,7 @@ This backend is configured for easy deployment on Render. See [RENDER_DEPLOYMENT
 Copy the variables from `.env.production` to your Render service environment variables.
 
 **Required Environment Variables:**
+
 - `NODE_ENV=production`
 - `MONGODB_URI` - Your MongoDB connection string
 - `JWT_SECRET` - A secure JWT secret

@@ -10,7 +10,7 @@ const createTransporter = () => {
     return null;
   }
 
-  return nodemailer.createTransporter({
+  return nodemailer.createTransport({
     service: config.EMAIL_SERVICE,
     auth: {
       user: config.EMAIL_USER,
@@ -26,7 +26,7 @@ const sendContactNotification = async (contact) => {
 
   const mailOptions = {
     from: config.EMAIL_FROM,
-    to: config.EMAIL_USER, // Send to admin
+    to: config.COMPANY_EMAIL || config.EMAIL_USER, // Send to admin
     subject: `New Contact Form Submission - ${contact.subject}`,
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">

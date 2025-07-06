@@ -18,6 +18,7 @@ Ensure your code is pushed to a Git repository that Render can access.
 4. Configure the service:
 
 ### Basic Settings:
+
 - **Name**: `anand-agro-backend` (or your preferred name)
 - **Environment**: `Node`
 - **Region**: Choose closest to your users
@@ -26,6 +27,7 @@ Ensure your code is pushed to a Git repository that Render can access.
 - **Start Command**: `npm start`
 
 ### Environment Variables:
+
 Add these environment variables in Render dashboard:
 
 ```
