@@ -13,6 +13,15 @@ connectDB();
 const app = express();
 const PORT = config.PORT;
 
+// Trust proxy for cloud deployment (fixes X-Forwarded-For header issue)
+// This is required for platforms like Render, Heroku, etc.
+if (
+  process.env.TRUST_PROXY === "true" ||
+  process.env.NODE_ENV === "production"
+) {
+  app.set("trust proxy", 1);
+}
+
 // Middleware
 app.use(helmet());
 
